@@ -1,0 +1,106 @@
+----------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  /Users/Michael/Desktop/Michael Stata Practice/temp/Michael_01_summary_stats
+> .log
+  log type:  text
+ opened on:  26 Jun 2017, 10:37:12
+
+. 
+end of do-file
+
+. do "/var/folders/3w/2mr_v21x34n1qp3_tp7wfqrw0000gn/T//SD00361.000000"
+
+. use Appended_Data
+
+. duplicates tag home_city competition_year, generate(number_entrants)
+
+Duplicates in terms of home_city competition_year
+
+. keep home_city competition_year number_entrants
+
+. duplicates drop number_entrants, force
+
+Duplicates in terms of number_entrants
+
+(62,752 observations deleted)
+
+. keep number_entrants home_section competition_year
+variable home_section not found
+r(111);
+
+end of do-file
+
+r(111);
+
+. clear
+
+. do "/var/folders/3w/2mr_v21x34n1qp3_tp7wfqrw0000gn/T//SD00361.000000"
+
+. use Appended_Data
+
+. duplicates tag home_city competition_year, generate(number_entrants)
+
+Duplicates in terms of home_city competition_year
+
+. keep home_city competition_year number_entrants
+
+. duplicates drop number_entrants, force
+
+Duplicates in terms of number_entrants
+
+(62,752 observations deleted)
+
+. keep number_entrants home_section competition_year
+variable home_section not found
+r(111);
+
+end of do-file
+
+r(111);
+
+. do "/var/folders/3w/2mr_v21x34n1qp3_tp7wfqrw0000gn/T//SD00361.000000"
+
+. /*******************************************************************************
+> *       File name:              Michael_01_append.do
+> *       Author(s):              Michael Petruzzelli
+> *       Written:        06/22/2017 (of latest version)
+> *
+> *       Inputs:                 Raw_File1.dta, Raw_File2.dta
+> *       Outputs:                CleanedFile.dta, MainResults.log, FinalPaper.pdf
+> *       
+> *       Description: 
+> *
+> *       1. This is a template for your Do-file. Just "Save as" your new Do-file, 
+> *       then write over the relevant fields! 
+> *
+> *       2. The description should say what the goal of the Do-file is. 
+> *
+> *       3. Make your code legible, not just functional. 
+> *               a) Indent your loops, conditionals, preserve/restores, other code chun
+> ks
+> *               b) Line up your punctuation: braces ("{" and "}"), equal signs ("="), 
+>                 colons (":"), quote marks (`" "'), etc.
+> *               c) Use "///" to break up lines of code that extend beyond the line bre
+> ak
+> *               d) Make clear section headers
+> *               e) Comment on everything that is not inherently clear to a first-time 
+> *               reader! Comments should explain why not how. 
+> *
+> *       3. Don't over-abbreviate commands and variable names, e.g. "summarize" = 
+> *       "summ" (ok), "sum" (ok), "su" (not ok)!
+> *
+> *       4. Avoid spaces in file names! Use underscore instead, e.g. "new_file".
+> * 
+> *******************************************************************************/
+.  
+. /********************** Section 1: Preliminaries ******************************/
+. 
+. version 14.1
+
+. clear all
+
+. clear mata
+
+. set more off
+
+. cap log close

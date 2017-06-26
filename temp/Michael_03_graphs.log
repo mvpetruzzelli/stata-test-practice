@@ -1,0 +1,68 @@
+----------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  /Users/Michael/Desktop/Michael Stata Practice/temp/Michael_03_graphs.log
+  log type:  text
+ opened on:  23 Jun 2017, 14:29:58
+
+. 
+. /********************** Section 1: Import raw data ****************************/
+. //import delimited needs "input_dir" after import
+. cd "`input_dir'"
+/Users/Michael/Desktop/Michael Stata Practice/temp
+
+. 
+. use cleaned_data
+
+. /******************** Section 2: Making Histograms ****************************/
+. encode home_state, gen(hs)
+
+. freq histogram hs
+command freq is unrecognized
+r(199);
+
+end of do-file
+
+r(199);
+
+. do "/var/folders/3w/2mr_v21x34n1qp3_tp7wfqrw0000gn/T//SD01135.000000"
+
+. freq: histogram hs
+command freq is unrecognized
+r(199);
+
+end of do-file
+
+r(199);
+
+. do "/var/folders/3w/2mr_v21x34n1qp3_tp7wfqrw0000gn/T//SD01135.000000"
+
+. histogram hs freq
+variable freq not found
+r(111);
+
+end of do-file
+
+r(111);
+
+. do "/var/folders/3w/2mr_v21x34n1qp3_tp7wfqrw0000gn/T//SD01135.000000"
+
+. histogram hs, freq
+(bin=47, start=1, width=1.1276596)
+
+. 
+end of do-file
+
+. clear
+
+. do "/var/folders/3w/2mr_v21x34n1qp3_tp7wfqrw0000gn/T//SD01135.000000"
+
+. 
+. version 14.1
+
+. clear all
+
+. clear mata
+
+. set more off
+
+. cap log close

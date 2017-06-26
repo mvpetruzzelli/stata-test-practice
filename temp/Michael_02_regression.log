@@ -1,0 +1,30 @@
+----------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  /Users/Michael/Desktop/Michael Stata Practice/temp/Michael_02_regression.lo
+> g
+  log type:  text
+ opened on:  23 Jun 2017, 16:35:02
+
+. 
+. /********************** Section 1: Import raw data ****************************/
+. //import delimited needs "input_dir" after import
+. cd "`input_dir'"
+/Users/Michael/Desktop/Michael Stata Practice/temp
+
+. 
+. use cleaned_data
+
+. 
+end of do-file
+
+. do "/var/folders/3w/2mr_v21x34n1qp3_tp7wfqrw0000gn/T//SD01135.000000"
+
+. version 14.1
+
+. clear all
+
+. clear mata
+
+. set more off
+
+. cap log close

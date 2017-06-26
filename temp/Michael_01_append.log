@@ -1,0 +1,699 @@
+----------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  /Users/Michael/Desktop/Michael Stata Practice/temp/Michael_01_append.log
+  log type:  text
+ opened on:  26 Jun 2017, 10:45:43
+
+. 
+. /********************** Section 1: Import raw data ****************************/
+. //import delimited needs "input_dir" after import
+. cd "`input_dir'"
+/Users/Michael/Desktop/Michael Stata Practice/Data
+
+. local Data : dir . files "*.csv"
+
+. di `Data'
+tennis_1159684.csvtennis_1159756.csvtennis_1159759.csvtennis_1159762.csvtennis_1159765.c
+> svtennis_1159768.csvtennis_1159774.csvtennis_1159777.csvtennis_1303952.csvtennis_13039
+> 55.csvtennis_1303958.csvtennis_1303961.csvtennis_1303964.csvtennis_1303967.csvtennis_1
+> 303970.csvtennis_1303973.csvtennis_1464749.csvtennis_1464757.csvtennis_1464760.csvtenn
+> is_1464763.csvtennis_1464766.csvtennis_1464769.csvtennis_1464772.csvtennis_1464775.csv
+> tennis_1464778.csvtennis_1608215.csvtennis_1608218.csvtennis_1608221.csvtennis_1608224
+> .csvtennis_1608227.csvtennis_1608230.csvtennis_1608233.csvtennis_1608236.csvtennis_188
+> 233.csvtennis_188234.csvtennis_188235.csvtennis_188236.csvtennis_188237.csvtennis_1882
+> 38.csvtennis_188239.csvtennis_188240.csvtennis_286531.csvtennis_286532.csvtennis_28653
+> 3.csvtennis_286535.csvtennis_286536.csvtennis_286537.csvtennis_286538.csvtennis_286791
+> .csvtennis_410765.csvtennis_410766.csvtennis_410767.csvtennis_410768.csvtennis_410769.
+> csvtennis_410770.csvtennis_410771.csvtennis_410772.csvtennis_561468.csvtennis_564071.c
+> svtennis_564074.csvtennis_564077.csvtennis_564080.csvtennis_564083.csvtennis_564086.cs
+> vtennis_564089.csvtennis_693618.csvtennis_693621.csvtennis_693624.csvtennis_693627.csv
+> tennis_693630.csvtennis_693633.csvtennis_693636.csvtennis_693639.csvtennis_839174.csvt
+> ennis_839177.csvtennis_839180.csvtennis_839183.csvtennis_839186.csvtennis_839189.csvte
+> nnis_839192.csvtennis_839195.csvtennis_93319.csvtennis_93320.csvtennis_93321.csvtennis
+> _93322.csvtennis_93323.csvtennis_93324.csvtennis_93325.csvtennis_93326.csvtennis_99734
+> 9.csvtennis_997352.csvtennis_997355.csvtennis_997358.csvtennis_997361.csvtennis_997364
+> .csvtennis_997367.csvtennis_997370.csv
+
+. foreach file in `Data' {
+  2.         di "`file'"
+  3.         import delimited `file', clear
+  4.         local F = subinstr("`file'", ".csv", "", .)
+  5.         di "`temp_dir'/`F'"
+  6.         save "`temp_dir'/`F'.dta", replace
+  7.         clear
+  8.         di "end"
+  9. }
+tennis_1159684.csv
+(15 vars, 356 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1159684
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1159684.dta saved
+end
+tennis_1159756.csv
+(15 vars, 376 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1159756
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1159756.dta saved
+end
+tennis_1159759.csv
+(15 vars, 392 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1159759
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1159759.dta saved
+end
+tennis_1159762.csv
+(15 vars, 372 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1159762
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1159762.dta saved
+end
+tennis_1159765.csv
+(15 vars, 354 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1159765
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1159765.dta saved
+end
+tennis_1159768.csv
+(15 vars, 398 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1159768
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1159768.dta saved
+end
+tennis_1159774.csv
+(15 vars, 370 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1159774
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1159774.dta saved
+end
+tennis_1159777.csv
+(15 vars, 379 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1159777
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1159777.dta saved
+end
+tennis_1303952.csv
+(15 vars, 372 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1303952
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1303952.dta saved
+end
+tennis_1303955.csv
+(15 vars, 395 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1303955
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1303955.dta saved
+end
+tennis_1303958.csv
+(15 vars, 401 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1303958
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1303958.dta saved
+end
+tennis_1303961.csv
+(15 vars, 355 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1303961
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1303961.dta saved
+end
+tennis_1303964.csv
+(15 vars, 369 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1303964
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1303964.dta saved
+end
+tennis_1303967.csv
+(15 vars, 358 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1303967
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1303967.dta saved
+end
+tennis_1303970.csv
+(15 vars, 395 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1303970
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1303970.dta saved
+end
+tennis_1303973.csv
+(15 vars, 380 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1303973
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1303973.dta saved
+end
+tennis_1464749.csv
+(15 vars, 729 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1464749
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1464749.dta saved
+end
+tennis_1464757.csv
+(15 vars, 658 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1464757
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1464757.dta saved
+end
+tennis_1464760.csv
+(15 vars, 723 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1464760
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1464760.dta saved
+end
+tennis_1464763.csv
+(15 vars, 721 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1464763
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1464763.dta saved
+end
+tennis_1464766.csv
+(15 vars, 647 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1464766
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1464766.dta saved
+end
+tennis_1464769.csv
+(15 vars, 698 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1464769
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1464769.dta saved
+end
+tennis_1464772.csv
+(15 vars, 729 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1464772
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1464772.dta saved
+end
+tennis_1464775.csv
+(15 vars, 736 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1464775
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1464775.dta saved
+end
+tennis_1464778.csv
+(15 vars, 743 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1464778
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1464778.dta saved
+end
+tennis_1608215.csv
+(15 vars, 683 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1608215
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1608215.dta saved
+end
+tennis_1608218.csv
+(15 vars, 722 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1608218
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1608218.dta saved
+end
+tennis_1608221.csv
+(15 vars, 735 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1608221
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1608221.dta saved
+end
+tennis_1608224.csv
+(15 vars, 664 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1608224
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1608224.dta saved
+end
+tennis_1608227.csv
+(15 vars, 684 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1608227
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1608227.dta saved
+end
+tennis_1608230.csv
+(15 vars, 709 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1608230
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1608230.dta saved
+end
+tennis_1608233.csv
+(15 vars, 742 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1608233
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1608233.dta saved
+end
+tennis_1608236.csv
+(15 vars, 740 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1608236
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_1608236.dta saved
+end
+tennis_188233.csv
+(15 vars, 566 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_188233
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_188233.dta saved
+end
+tennis_188234.csv
+(15 vars, 655 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_188234
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_188234.dta saved
+end
+tennis_188235.csv
+(15 vars, 677 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_188235
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_188235.dta saved
+end
+tennis_188236.csv
+(15 vars, 659 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_188236
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_188236.dta saved
+end
+tennis_188237.csv
+(15 vars, 622 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_188237
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_188237.dta saved
+end
+tennis_188238.csv
+(15 vars, 680 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_188238
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_188238.dta saved
+end
+tennis_188239.csv
+(15 vars, 709 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_188239
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_188239.dta saved
+end
+tennis_188240.csv
+(15 vars, 709 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_188240
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_188240.dta saved
+end
+tennis_286531.csv
+(15 vars, 623 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_286531
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_286531.dta saved
+end
+tennis_286532.csv
+(15 vars, 681 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_286532
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_286532.dta saved
+end
+tennis_286533.csv
+(15 vars, 721 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_286533
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_286533.dta saved
+end
+tennis_286535.csv
+(15 vars, 637 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_286535
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_286535.dta saved
+end
+tennis_286536.csv
+(15 vars, 714 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_286536
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_286536.dta saved
+end
+tennis_286537.csv
+(15 vars, 751 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_286537
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_286537.dta saved
+end
+tennis_286538.csv
+(15 vars, 717 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_286538
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_286538.dta saved
+end
+tennis_286791.csv
+(15 vars, 703 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_286791
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_286791.dta saved
+end
+tennis_410765.csv
+(15 vars, 655 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_410765
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_410765.dta saved
+end
+tennis_410766.csv
+(15 vars, 683 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_410766
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_410766.dta saved
+end
+tennis_410767.csv
+(15 vars, 706 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_410767
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_410767.dta saved
+end
+tennis_410768.csv
+(15 vars, 714 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_410768
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_410768.dta saved
+end
+tennis_410769.csv
+(15 vars, 684 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_410769
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_410769.dta saved
+end
+tennis_410770.csv
+(15 vars, 724 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_410770
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_410770.dta saved
+end
+tennis_410771.csv
+(15 vars, 751 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_410771
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_410771.dta saved
+end
+tennis_410772.csv
+(15 vars, 694 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_410772
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_410772.dta saved
+end
+tennis_561468.csv
+(15 vars, 945 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_561468
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_561468.dta saved
+end
+tennis_564071.csv
+(15 vars, 744 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_564071
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_564071.dta saved
+end
+tennis_564074.csv
+(15 vars, 890 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_564074
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_564074.dta saved
+end
+tennis_564077.csv
+(15 vars, 911 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_564077
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_564077.dta saved
+end
+tennis_564080.csv
+(15 vars, 771 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_564080
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_564080.dta saved
+end
+tennis_564083.csv
+(15 vars, 785 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_564083
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_564083.dta saved
+end
+tennis_564086.csv
+(15 vars, 872 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_564086
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_564086.dta saved
+end
+tennis_564089.csv
+(15 vars, 839 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_564089
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_564089.dta saved
+end
+tennis_693618.csv
+(15 vars, 653 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_693618
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_693618.dta saved
+end
+tennis_693621.csv
+(15 vars, 725 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_693621
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_693621.dta saved
+end
+tennis_693624.csv
+(15 vars, 744 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_693624
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_693624.dta saved
+end
+tennis_693627.csv
+(15 vars, 755 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_693627
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_693627.dta saved
+end
+tennis_693630.csv
+(15 vars, 705 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_693630
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_693630.dta saved
+end
+tennis_693633.csv
+(15 vars, 759 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_693633
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_693633.dta saved
+end
+tennis_693636.csv
+(15 vars, 824 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_693636
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_693636.dta saved
+end
+tennis_693639.csv
+(15 vars, 813 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_693639
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_693639.dta saved
+end
+tennis_839174.csv
+(15 vars, 652 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_839174
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_839174.dta saved
+end
+tennis_839177.csv
+(15 vars, 746 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_839177
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_839177.dta saved
+end
+tennis_839180.csv
+(15 vars, 789 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_839180
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_839180.dta saved
+end
+tennis_839183.csv
+(15 vars, 759 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_839183
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_839183.dta saved
+end
+tennis_839186.csv
+(15 vars, 694 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_839186
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_839186.dta saved
+end
+tennis_839189.csv
+(15 vars, 768 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_839189
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_839189.dta saved
+end
+tennis_839192.csv
+(15 vars, 815 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_839192
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_839192.dta saved
+end
+tennis_839195.csv
+(15 vars, 805 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_839195
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_839195.dta saved
+end
+tennis_93319.csv
+(15 vars, 426 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_93319
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_93319.dta saved
+end
+tennis_93320.csv
+(15 vars, 470 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_93320
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_93320.dta saved
+end
+tennis_93321.csv
+(15 vars, 495 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_93321
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_93321.dta saved
+end
+tennis_93322.csv
+(15 vars, 448 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_93322
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_93322.dta saved
+end
+tennis_93323.csv
+(15 vars, 424 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_93323
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_93323.dta saved
+end
+tennis_93324.csv
+(15 vars, 458 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_93324
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_93324.dta saved
+end
+tennis_93325.csv
+(15 vars, 497 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_93325
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_93325.dta saved
+end
+tennis_93326.csv
+(15 vars, 489 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_93326
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_93326.dta saved
+end
+tennis_997349.csv
+(15 vars, 658 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_997349
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_997349.dta saved
+end
+tennis_997352.csv
+(15 vars, 694 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_997352
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_997352.dta saved
+end
+tennis_997355.csv
+(15 vars, 780 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_997355
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_997355.dta saved
+end
+tennis_997358.csv
+(15 vars, 717 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_997358
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_997358.dta saved
+end
+tennis_997361.csv
+(15 vars, 686 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_997361
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_997361.dta saved
+end
+tennis_997364.csv
+(15 vars, 746 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_997364
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_997364.dta saved
+end
+tennis_997367.csv
+(15 vars, 777 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_997367
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_997367.dta saved
+end
+tennis_997370.csv
+(15 vars, 781 obs)
+/Users/Michael/Desktop/Michael Stata Practice/temp/tennis_997370
+file /Users/Michael/Desktop/Michael Stata Practice/temp/tennis_997370.dta saved
+end
+
+. /********************** Section 2: Clean data *********************************/
+. 
+. //********************* Subsection 1: Append **********************************/
+. 
+. cd "`temp_dir'"
+/Users/Michael/Desktop/Michael Stata Practice/temp
+
+. local Temp : dir . files "*.dta"
+
+. di `Temp'
+cleaned_data.dtacount_by_state.dtahome_section_data.dtatennis_1159684.dtatennis_1159756.
+> dtatennis_1159759.dtatennis_1159762.dtatennis_1159765.dtatennis_1159768.dtatennis_1159
+> 774.dtatennis_1159777.dtatennis_1303952.dtatennis_1303955.dtatennis_1303958.dtatennis_
+> 1303961.dtatennis_1303964.dtatennis_1303967.dtatennis_1303970.dtatennis_1303973.dtaten
+> nis_1464749.dtatennis_1464757.dtatennis_1464760.dtatennis_1464763.dtatennis_1464766.dt
+> atennis_1464769.dtatennis_1464772.dtatennis_1464775.dtatennis_1464778.dtatennis_160821
+> 5.dtatennis_1608218.dtatennis_1608221.dtatennis_1608224.dtatennis_1608227.dtatennis_16
+> 08230.dtatennis_1608233.dtatennis_1608236.dtatennis_188233.dtatennis_188234.dtatennis_
+> 188235.dtatennis_188236.dtatennis_188237.dtatennis_188238.dtatennis_188239.dtatennis_1
+> 88240.dtatennis_286531.dtatennis_286532.dtatennis_286533.dtatennis_286535.dtatennis_28
+> 6536.dtatennis_286537.dtatennis_286538.dtatennis_286791.dtatennis_410765.dtatennis_410
+> 766.dtatennis_410767.dtatennis_410768.dtatennis_410769.dtatennis_410770.dtatennis_4107
+> 71.dtatennis_410772.dtatennis_561468.dtatennis_564071.dtatennis_564074.dtatennis_56407
+> 7.dtatennis_564080.dtatennis_564083.dtatennis_564086.dtatennis_564089.dtatennis_693618
+> .dtatennis_693621.dtatennis_693624.dtatennis_693627.dtatennis_693630.dtatennis_693633.
+> dtatennis_693636.dtatennis_693639.dtatennis_839174.dtatennis_839177.dtatennis_839180.d
+> tatennis_839183.dtatennis_839186.dtatennis_839189.dtatennis_839192.dtatennis_839195.dt
+> atennis_93319.dtatennis_93320.dtatennis_93321.dtatennis_93322.dtatennis_93323.dtatenni
+> s_93324.dtatennis_93325.dtatennis_93326.dtatennis_997349.dtatennis_997352.dtatennis_99
+> 7355.dtatennis_997358.dtatennis_997361.dtatennis_997364.dtatennis_997367.dtatennis_997
+> 370.dta
+
+. 
+. clear
+
+. save "`temp_dir'/Appended_Data", replace emptyok
+(note: dataset contains 0 observations)
+(note: file /Users/Michael/Desktop/Michael Stata Practice/temp/Appended_Data.dta not fou
+> nd)
+file /Users/Michael/Desktop/Michael Stata Practice/temp/Appended_Data.dta saved
+
+. 
+. foreach file in `Temp' {
+  2.         di "`file'"
+  3.         append using `file'
+  4.         
+. }
+cleaned_data.dta
+count_by_state.dta
+home_section_data.dta
+tennis_1159684.dta
+tennis_1159756.dta
+(note: variable competition_group was str8, now str9 to accommodate using data's
+       values)
+(note: variable list_title was str34, now str35 to accommodate using data's values)
+(note: variable name was str29, now str33 to accommodate using data's values)
+tennis_1159759.dta
+tennis_1159762.dta
+tennis_1159765.dta
+tennis_1159768.dta
+tennis_1159774.dta
+(note: variable name was str33, now str40 to accommodate using data's values)
+tennis_1159777.dta
+tennis_1303952.dta
+tennis_1303955.dta
+tennis_1303958.dta
+tennis_1303961.dta
+tennis_1303964.dta
+tennis_1303967.dta
+tennis_1303970.dta
+tennis_1303973.dta
+tennis_1464749.dta
+tennis_1464757.dta
+tennis_1464760.dta
+tennis_1464763.dta
+tennis_1464766.dta
+tennis_1464769.dta
+tennis_1464772.dta
+tennis_1464775.dta
+tennis_1464778.dta
+tennis_1608215.dta
+tennis_1608218.dta
+tennis_1608221.dta
+tennis_1608224.dta
+tennis_1608227.dta
+tennis_1608230.dta
+tennis_1608233.dta
+tennis_1608236.dta
+tennis_188233.dta
+tennis_188234.dta
+tennis_188235.dta
+tennis_188236.dta
+tennis_188237.dta
+tennis_188238.dta
+tennis_188239.dta
+tennis_188240.dta
+tennis_286531.dta
+(note: variable list_publication_time was str88, now str89 to accommodate using data's
+       values)
+tennis_286532.dta
+tennis_286533.dta
+tennis_286535.dta
+tennis_286536.dta
+tennis_286537.dta
+tennis_286538.dta
+tennis_286791.dta
+tennis_410765.dta
+tennis_410766.dta
+tennis_410767.dta
+tennis_410768.dta
+tennis_410769.dta
+tennis_410770.dta
+tennis_410771.dta
+tennis_410772.dta
+tennis_561468.dta
+tennis_564071.dta
+tennis_564074.dta
+tennis_564077.dta
+tennis_564080.dta
+tennis_564083.dta
+tennis_564086.dta
+tennis_564089.dta
+tennis_693618.dta
+tennis_693621.dta
+tennis_693624.dta
+tennis_693627.dta
+tennis_693630.dta
+tennis_693633.dta
+tennis_693636.dta
+tennis_693639.dta
+tennis_839174.dta
+tennis_839177.dta
+tennis_839180.dta
+tennis_839183.dta
+tennis_839186.dta
+tennis_839189.dta
+tennis_839192.dta
+tennis_839195.dta
+tennis_93319.dta
+tennis_93320.dta
+tennis_93321.dta
+tennis_93322.dta
+tennis_93323.dta
+tennis_93324.dta
+tennis_93325.dta
+tennis_93326.dta
+tennis_997349.dta
+tennis_997352.dta
+tennis_997355.dta
+tennis_997358.dta
+tennis_997361.dta
+tennis_997364.dta
+tennis_997367.dta
+tennis_997370.dta
+
+. /********************** Section 2: Save and Close *****************************/
+. 
+. save "`temp_dir'/Appended_Data", replace emptyok
+file /Users/Michael/Desktop/Michael Stata Practice/temp/Appended_Data.dta saved
+
+. clear
+
+. log close
+      name:  <unnamed>
+       log:  /Users/Michael/Desktop/Michael Stata Practice/temp/Michael_01_append.log
+  log type:  text
+ closed on:  26 Jun 2017, 10:45:47
+----------------------------------------------------------------------------------------
